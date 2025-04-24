@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Me</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0d0d0d;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .contact-container {
+      background-color: #1a1a1a;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.2);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .contact-container h1 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #ff4d4d;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      background-color: #333;
+      color: white;
+      font-size: 1em;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #aaa;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: transparent;
+      border: 2px solid #ff4d4d;
+      border-radius: 30px;
+      color: #ff4d4d;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #ff4d4d;
+      color: #000;
+    }
+
+    .success-message {
+      text-align: center;
+      color: #00ff99;
+      margin-top: 15px;
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="contact-container">
+    <h1>Contact Me</h1>
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+      <div class="success-message" id="successMsg">Thank you! Your message has been sent.</div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const successMsg = document.getElementById("successMsg");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Fake submit simulation
+      setTimeout(() => {
+        form.reset();
+        successMsg.style.display = "block";
+        setTimeout(() => {
+          successMsg.style.display = "none";
+        }, 4000);
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>
